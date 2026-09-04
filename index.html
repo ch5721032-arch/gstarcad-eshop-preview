@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GstarCAD 2027 – Buy Official License | Buy/Eshop 合并版原型</title>
+<style>
+  :root { --primary:#1a73e8; --dark:#0b2545; --accent:#ff6b35; --green:#188038; --bg:#f6f8fb; --line:#e3e8ef; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI', system-ui, -apple-system, sans-serif; color:#1c2430; background:#fff; }
+  .container { max-width:1180px; margin:0 auto; padding:0 20px; }
+  /* header */
+  header { background:var(--dark); color:#fff; padding:14px 0; position:sticky; top:0; z-index:50; }
+  header .container { display:flex; align-items:center; justify-content:space-between; }
+  .logo { font-weight:800; font-size:20px; letter-spacing:.5px; }
+  .logo span { color:#7db4ff; }
+  nav a { color:#c9d6e8; text-decoration:none; margin-left:22px; font-size:14px; }
+  nav a:hover { color:#fff; }
+  .nav-cta { background:var(--accent); color:#fff !important; padding:8px 16px; border-radius:6px; font-weight:600; }
+  /* hero */
+  .hero { background:linear-gradient(135deg,#0b2545 0%,#123a6b 60%,#1a4f8f 100%); color:#fff; padding:64px 0 56px; }
+  .hero-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:48px; align-items:center; }
+  .badge { display:inline-block; background:rgba(125,180,255,.15); border:1px solid rgba(125,180,255,.4); color:#a8ccff; font-size:12px; padding:5px 12px; border-radius:20px; margin-bottom:16px; letter-spacing:.5px; }
+  .hero h1 { font-size:42px; line-height:1.15; margin-bottom:14px; font-weight:800; }
+  .hero h1 em { color:#ffb74d; font-style:normal; }
+  .hero .sub { font-size:17px; color:#c9d6e8; margin-bottom:28px; max-width:520px; }
+  .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
+  .btn { display:inline-block; padding:15px 30px; border-radius:8px; font-weight:700; font-size:16px; text-decoration:none; text-align:center; }
+  .btn-primary { background:var(--accent); color:#fff; box-shadow:0 4px 14px rgba(255,107,53,.35); }
+  .btn-primary:hover { background:#e85a24; }
+  .btn-ghost { background:transparent; color:#fff; border:2px solid #5b8dc9; }
+  .btn-ghost:hover { border-color:#fff; }
+  .price-line { margin-top:16px; font-size:14px; color:#a8ccff; }
+  .price-line b { color:#ffd54f; font-size:18px; }
+  .trust-strip { display:flex; gap:26px; margin-top:34px; flex-wrap:wrap; }
+  .trust-item { font-size:13px; color:#a8ccff; }
+  .trust-item b { color:#fff; display:block; font-size:16px; }
+  .hero-visual { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.15); border-radius:14px; padding:26px; }
+  .mock-ui { background:#fff; color:#1c2430; border-radius:10px; padding:20px; }
+  .mock-ui .mu-head { display:flex; gap:8px; margin-bottom:14px; }
+  .mock-ui .mu-dot { width:10px; height:10px; border-radius:50%; background:#e3e8ef; }
+  .mock-ui .mu-bar { height:14px; background:#eef2f7; border-radius:4px; margin-bottom:10px; }
+  .mock-ui .mu-bar.w60 { width:60%; } .mock-ui .mu-bar.w80 { width:80%; } .mock-ui .mu-bar.w40 { width:40%; }
+  .mock-ui .mu-btn { background:var(--primary); color:#fff; border-radius:6px; padding:8px 0; text-align:center; font-size:12px; font-weight:600; margin-top:12px; }
+  /* sections */
+  section { padding:60px 0; }
+  .sec-title { text-align:center; font-size:30px; font-weight:800; margin-bottom:8px; }
+  .sec-sub { text-align:center; color:#5f6b7a; margin-bottom:40px; font-size:15px; }
+  /* pricing */
+  .price-tabs { display:flex; justify-content:center; gap:10px; margin-bottom:30px; }
+  .price-tab { padding:9px 22px; border-radius:24px; border:1.5px solid var(--line); background:#fff; font-weight:600; font-size:14px; cursor:pointer; }
+  .price-tab.active { background:var(--dark); color:#fff; border-color:var(--dark); }
+  .price-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .price-card { border:1.5px solid var(--line); border-radius:14px; padding:28px 24px; background:#fff; position:relative; }
+  .price-card.featured { border-color:var(--primary); box-shadow:0 10px 30px rgba(26,115,232,.15); }
+  .featured-tag { position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--primary); color:#fff; font-size:12px; font-weight:700; padding:5px 16px; border-radius:20px; }
+  .price-card h3 { font-size:18px; margin-bottom:6px; }
+  .price-card .p-desc { font-size:13px; color:#5f6b7a; margin-bottom:16px; min-height:34px; }
+  .price-card .amount { font-size:34px; font-weight:800; }
+  /* hot products */
+  .hot-products { padding-top:0; }
+  .hot-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .hot-card { border:1.5px solid var(--line); border-radius:14px; padding:28px 24px; background:#fff; text-align:center; }
+  .hot-card:hover { box-shadow:0 8px 24px rgba(11,37,69,.08); }
+  .hot-ico { font-size:34px; margin-bottom:12px; }
+  .hot-card h3 { font-size:17px; margin-bottom:8px; }
+  .hot-card p { font-size:13px; color:#5f6b7a; margin-bottom:18px; min-height:42px; }
+  .hot-card a { color:var(--primary); font-weight:700; font-size:13.5px; text-decoration:none; }
+  .hot-card a:hover { text-decoration:underline; }
+  .price-card .amount small { font-size:14px; color:#5f6b7a; font-weight:400; }
+  .price-card ul { list-style:none; margin:18px 0 22px; font-size:13.5px; }
+  .price-card ul li { padding:5px 0 5px 24px; position:relative; color:#3a4657; }
+  .price-card ul li::before { content:"✓"; position:absolute; left:0; color:var(--green); font-weight:700; }
+  .price-card .btn { width:100%; }
+  .btn-buy { background:var(--primary); color:#fff; }
+  .btn-buy:hover { background:#135cb9; }
+  /* features */
+  .feat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
+  .feat { background:var(--bg); border-radius:12px; padding:24px; }
+  .feat .ico { font-size:26px; margin-bottom:12px; }
+  .feat h4 { font-size:15px; margin-bottom:8px; }
+  .feat p { font-size:13px; color:#5f6b7a; }
+  /* comparison */
+  .cmp-table { width:100%; border-collapse:collapse; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 2px 12px rgba(11,37,69,.08); }
+  .cmp-table th, .cmp-table td { padding:13px 18px; text-align:left; border-bottom:1px solid var(--line); font-size:14px; }
+  .cmp-table th { background:var(--dark); color:#fff; font-weight:600; }
+  .cmp-table tr:last-child td { border-bottom:none; }
+  .yes { color:var(--green); font-weight:700; } .no { color:#c0392b; }
+  /* testimonials */
+  .testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .testi { background:var(--bg); border-radius:12px; padding:24px; }
+  .testi .stars { color:#f5a623; margin-bottom:10px; letter-spacing:2px; }
+  .testi p { font-size:13.5px; color:#3a4657; margin-bottom:14px; font-style:italic; }
+  .testi .who { font-size:12.5px; color:#5f6b7a; font-weight:600; }
+  /* faq */
+  .faq { max-width:760px; margin:0 auto; }
+  .faq-item { border:1px solid var(--line); border-radius:10px; margin-bottom:12px; overflow:hidden; }
+  .faq-q { padding:16px 20px; font-weight:600; font-size:14.5px; background:#fff; cursor:pointer; }
+  .faq-a { padding:0 20px 16px; font-size:13.5px; color:#5f6b7a; display:none; }
+  .faq-item.open .faq-a { display:block; }
+  /* final cta */
+  .final-cta { background:linear-gradient(135deg,#0b2545,#123a6b); color:#fff; text-align:center; padding:56px 0; }
+  .final-cta h2 { font-size:30px; margin-bottom:10px; }
+  .final-cta p { color:#c9d6e8; margin-bottom:26px; }
+  /* footer */
+  footer { background:#081a30; color:#7d8ba1; padding:26px 0; font-size:12.5px; text-align:center; }
+  /* annotation */
+  .anno { position:fixed; left:16px; bottom:16px; background:#fffbe9; border:1.5px dashed #f5a623; color:#8a6d00; font-size:12px; padding:10px 14px; border-radius:8px; max-width:300px; z-index:99; font-family:'Segoe UI'; }
+  @media (max-width:900px) {
+    .hero-grid { grid-template-columns:1fr; }
+    .hero h1 { font-size:30px; }
+    .price-grid { grid-template-columns:1fr; }
+    .hot-grid { grid-template-columns:1fr; }
+    .feat-grid { grid-template-columns:1fr 1fr; }
+    .testi-grid { grid-template-columns:1fr; }
+    nav a { display:none; }
+    nav .nav-cta { display:inline-block; }
+  }
+  /* ===== Buy/Eshop 合并新增样式 ===== */
+  /* 购买流程步骤条 */
+  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; max-width:900px; margin:0 auto; }
+  .step { text-align:center; padding:26px 18px; background:#fff; border:1.5px solid var(--line); border-radius:12px; position:relative; }
+  .step .num { width:34px; height:34px; line-height:34px; border-radius:50%; background:var(--primary); color:#fff; font-weight:800; margin:0 auto 12px; }
+  .step h4 { font-size:15px; margin-bottom:6px; }
+  .step p { font-size:13px; color:#5f6b7a; }
+  /* 信任保障 6 项 */
+  .guar-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .guar { background:#fff; border:1.5px solid var(--line); border-radius:12px; padding:24px 20px; }
+  .guar .g-ico { font-size:26px; margin-bottom:10px; }
+  .guar h4 { font-size:14.5px; margin-bottom:6px; }
+  .guar p { font-size:12.5px; color:#5f6b7a; line-height:1.6; }
+  /* 退款保证大区 */
+  .refund { background:linear-gradient(135deg,#0b2545,#123a6b); color:#fff; text-align:center; padding:52px 24px; border-radius:16px; }
+  .refund h2 { font-size:28px; margin-bottom:10px; }
+  .refund h2 span { color:#ffd54f; }
+  .refund p { color:#c9d6e8; max-width:640px; margin:0 auto 22px; font-size:14.5px; line-height:1.7; }
+  .refund .btn { font-size:16px; padding:15px 34px; }
+  /* FAQ 分组 */
+  .faq-group { max-width:760px; margin:0 auto 30px; }
+  .faq-group h3 { font-size:17px; margin-bottom:14px; text-align:center; color:var(--dark); }
+  @media (max-width:900px) {
+    .steps { grid-template-columns:1fr; }
+    .guar-grid { grid-template-columns:1fr; }
+  }
+
+/* ⑤ 更多产品模块 */
+.more-products { background:linear-gradient(135deg,#0b2545,#123a6b); color:#fff; text-align:center; padding:52px 24px 40px; border-radius:16px; }
+.more-products h2 { font-size:28px; margin-bottom:10px; }
+.more-products h2 span { color:#ffd54f; }
+.mp-lead { color:#c9d6e8; max-width:680px; margin:0 auto 22px; font-size:14.5px; line-height:1.7; }
+.mp-toggle { font-size:15px; padding:13px 30px; }
+.more-products.open .mp-expand { display:none; }
+.mp-collapse { display:none; margin-top:22px; }
+.more-products.open .mp-collapse { display:inline-flex; }
+.mp-wrap { max-height:0; overflow:hidden; transition:max-height .5s ease; }
+.more-products.open .mp-wrap { max-height:5200px; }
+.mp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; margin-top:28px; text-align:left; }
+.mp-card { background:#fff; color:#10243e; border-radius:12px; padding:20px 22px; display:flex; flex-direction:column; gap:8px; box-shadow:0 8px 22px rgba(0,0,0,.22); }
+.mp-card h4 { margin:0; font-size:17px; color:#0b2545; }
+.mp-card p { margin:0; font-size:13.5px; line-height:1.65; color:#52647c; flex:1; }
+.mp-card a { color:var(--accent); font-weight:700; font-size:13.5px; text-decoration:none; }
+.mp-tag { font-size:10.5px; font-weight:800; letter-spacing:.6px; text-transform:uppercase; color:var(--accent); }
+.mp-tag-gold { color:#b8860b; }
+.mp-card-houseplan { border:2px solid #ffd54f; }
+.mp-foot { margin:22px 0 0; color:#c9d6e8; font-size:13px; }
+
+/* Eshop-style product pricing (module 05) */
+.mp-eshop { max-width:760px; margin:26px auto 0; text-align:left; }
+.mp-card { display:block; background:#fff; color:#10243e; border-radius:14px; padding:24px 26px; box-shadow:0 10px 28px rgba(0,0,0,.25); }
+.mp-card-houseplan { border:2px solid #ffd54f; }
+.mp-head { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.mp-head h3 { margin:4px 0 6px; font-size:20px; color:#0b2545; }
+.mp-brief { margin:0 0 16px; font-size:13.5px; line-height:1.65; color:#52647c; }
+.mp-tabs { display:flex; gap:8px; flex-wrap:wrap; border-bottom:1px solid #e5ebf3; padding-bottom:14px; }
+.mp-tab { padding:7px 18px; border-radius:20px; border:1.5px solid #d8e0ec; background:#fff; color:#3a4657; font-weight:600; font-size:13px; cursor:pointer; }
+.mp-tab.active { background:var(--primary); border-color:var(--primary); color:#fff; }
+.mp-row { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:13px 2px; border-bottom:1px dashed #e5ebf3; }
+.mp-row:last-child { border-bottom:none; }
+.mp-row-name { font-weight:700; font-size:15px; color:#0b2545; }
+.mp-row-price { text-align:right; }
+.mp-row-price b { font-size:20px; color:#0b2545; }
+.mp-row-price .mp-unit { font-size:12px; color:#5f6b7a; font-weight:600; }
+.mp-row-price i { font-style:normal; color:#9aa7b8; font-size:14px; text-decoration:line-through; margin-left:6px; }
+.mp-buy { display:inline-block; background:var(--primary); color:#fff; border-radius:8px; padding:9px 22px; font-weight:700; font-size:13.5px; cursor:pointer; text-decoration:none; }
+.mp-buy:hover { background:#135cb9; }
+.mp-stack { display:flex; flex-direction:column; gap:16px; margin-top:24px; text-align:left; }
+@media (max-width:560px) {
+  .mp-row { flex-wrap:wrap; }
+  .mp-row-price { flex:1; text-align:left; }
+}
+</style>
+</head>
+<body>
+<!-- 原型标注（交付时删除） -->
+<div class="anno"><b>原型标注（非落地页内容）</b><br>Buy 页 + Eshop 合并版<br>① 购买流程：选产品→邮箱验证→支付<br>② 信任保障 6 项（自 /buy/ 迁移）<br>③ 100% 退款保证（自 /buy/ 迁移）<br>④ FAQ 分组：购买类 7 项 + 产品类 6 项</div>
+
+<header>
+  <div class="container">
+    <div class="logo">GSTAR<span>CAD</span></div>
+    <nav>
+      <a href="#">Products</a>
+      <a href="#" class="nav-cta">Login</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ① 首屏：意图匹配 + 双CTA + 价格锚点 -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">OFFICIAL STORE · 30-DAY MONEY-BACK GUARANTEE</span>
+      <h1>Buy <em>GstarCAD 2027</em><br>Official Perpetual License</h1>
+      <p class="sub">Full DWG-compatible 2D/3D CAD at a fraction of AutoCAD's price. Instant activation, no renewal required.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-primary">Buy Now – from $999</a>
+        <a href="#" class="btn btn-ghost">Try Free for 30 Days</a>
+      </div>
+      <p class="price-line">Perpetual license from <b>$999</b> · Subscription from <b>$299/yr</b> · Upgrade from <b>$199</b></p>
+      <div class="trust-strip">
+        <div class="trust-item"><b>1B+</b>Global Users</div>
+        <div class="trust-item"><b>100%</b>DWG Compatible</div>
+        <div class="trust-item"><b>Instant</b>Email Delivery</div>
+        <div class="trust-item"><b>30-Day</b>Money Back</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="mock-ui">
+        <div class="mu-head"><div class="mu-dot"></div><div class="mu-dot"></div><div class="mu-dot"></div></div>
+        <div class="mu-bar w80"></div><div class="mu-bar w60"></div><div class="mu-bar w80"></div><div class="mu-bar w40"></div>
+        <div class="mu-btn">GstarCAD 2027 – Activated ✓</div>
+        <div style="font-size:11px;color:#8a94a6;margin-top:10px;">License: XXXXX-XXXXX-XXXXX-XXXXX</div>
+      </div>
+      <p style="font-size:12px;color:#a8ccff;margin-top:14px;text-align:center;">Instant activation after purchase</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- 热门产品推荐 -->
+<section class="hot-products">
+  <div class="container">
+    <h2 class="sec-title">Popular Products</h2>
+    <p class="sec-sub">Explore the ecosystem that extends GstarCAD</p>
+    <div class="hot-grid">
+      <div class="hot-card">
+        <div class="hot-ico">🏗️</div>
+        <h3>GstarBIM</h3>
+        <p>Building Information Modeling solutions that connect design, analysis and construction.</p>
+        <a href="https://www.gstarcad.net/gstarbim/" target="_blank" rel="noopener">Learn More →</a>
+      </div>
+      <div class="hot-card">
+        <div class="hot-ico">🎨</div>
+        <h3>GstarRender</h3>
+        <p>Bring your 3D models to life with fast, high-quality rendering powered by AI.</p>
+        <a href="https://enweb.gstarcad.net/ai/render/" target="_blank" rel="noopener">Learn More →</a>
+      </div>
+      <div class="hot-card">
+        <div class="hot-ico">⚙️</div>
+        <h3>GstarCAD Mechanical</h3>
+        <p>Specialized mechanical design toolkit with powerful part libraries and drafting tools.</p>
+        <a href="https://www.gstarcad.net/mechanical/" target="_blank" rel="noopener">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ② 价格：三档对比 + Perpetual/Subscription 切换 -->
+<section id="pricing">
+  <div class="container">
+    <h2 class="sec-title">Simple, Transparent Pricing</h2>
+    <p class="sec-sub">One-time payment. Official license. 30-day money-back guarantee.</p>
+    <div class="price-tabs">
+      <span class="price-tab active">Perpetual (One-Time)</span>
+      <span class="price-tab">Subscription (Yearly)</span>
+      <span class="price-tab">Upgrade</span>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>Standard</h3>
+        <div class="p-desc">Core 2D/3D CAD with full DWG support</div>
+        <div class="amount">$999 <small>/ perpetual</small></div>
+        <ul>
+          <li>GstarCAD 2027 Standard</li>
+          <li>2D drafting & 3D modeling</li>
+          <li>Full DWG/DXF compatibility</li>
+          <li>Free updates for 1 year</li>
+          <li>Email support</li>
+        </ul>
+        <a href="#" class="btn btn-buy">Buy Standard</a>
+      </div>
+      <div class="price-card featured">
+        <span class="featured-tag">MOST POPULAR</span>
+        <h3>Pro</h3>
+        <div class="p-desc">Advanced tools for professionals</div>
+        <div class="amount">$1,499 <small>/ perpetual</small></div>
+        <ul>
+          <li>Everything in Standard</li>
+          <li>LISP & VBA automation</li>
+          <li>Dynamic blocks & tool palettes</li>
+          <li>Advanced 3D & rendering</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="#" class="btn btn-buy">Buy Pro</a>
+      </div>
+      <div class="price-card">
+        <h3>Mechanical</h3>
+        <div class="p-desc">Mechanical design toolkit included</div>
+        <div class="amount">$2,199 <small>/ perpetual</small></div>
+        <ul>
+          <li>Everything in Pro</li>
+          <li>Mechanical 2026 toolkit</li>
+          <li>Part libraries & generators</li>
+          <li>BOM & annotation tools</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="#" class="btn btn-buy">Buy Mechanical</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ③ 购买流程（Eshop 现有流程：选产品 → 邮箱验证 → 支付） -->
+<section style="background:var(--bg);">
+  <div class="container">
+    <h2 class="sec-title">How Buying Works</h2>
+    <p class="sec-sub">Official store · FastSpring secure checkout · Instant delivery</p>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h4>Choose Your Edition</h4><p>Pick the license that fits — Perpetual, Subscription or Upgrade.</p></div>
+      <div class="step"><div class="num">2</div><h4>Verify Your Email</h4><p>We send a one-time verification link to your inbox (resend anytime).</p></div>
+      <div class="step"><div class="num">3</div><h4>Pay & Activate</h4><p>Pay securely, then activate instantly with your license key.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ 信任保障（自 /buy/ 迁移） -->
+<!-- ⑤ 更多产品（对照 Eshop：除 GstarCAD 2027 外的 6 款在售产品，Houseplan 为非 CAD 产品） -->
+<section style="background:var(--bg);">
+  <div class="container">
+        <div class="more-products" id="moreProducts">
+      <h2>More Than CAD? <span>Explore the Full GstarCAD Family</span></h2>
+      <p class="mp-lead">Beyond GstarCAD 2027, we also build specialized CAD tools, cross-platform editions, and Houseplan for home &amp; interior design — all available in the official Eshop.</p>
+
+      <div class="mp-eshop">
+        <div class="mp-card mp-card-houseplan" data-card="houseplan">
+          <div class="mp-head">
+            <div>
+              <div class="mp-tag mp-tag-gold">NON-CAD · HOME &amp; INTERIOR</div>
+              <h3>&#127968; Houseplan 2.0</h3>
+            </div>
+          </div>
+          <p class="mp-brief">Lightweight yet powerful 3D modeling &amp; rendering &mdash; enhanced with AI, terrain editing, component customization and sun-shadow simulation. Built for architects and interior designers.</p>
+          <div class="mp-tabs">
+            <button class="mp-tab active" type="button" data-t="1">Perpetual</button>
+            <button class="mp-tab" type="button" data-t="2">Subscription</button>
+            <button class="mp-tab" type="button" data-t="3">Upgrade</button>
+          </div>
+          <div class="mp-rows">
+            <div class="mp-row" data-t="1">
+              <div class="mp-row-name">Houseplan 2.0</div>
+              <div class="mp-row-price"><b>$850</b> <span class="mp-unit">/ Perpetual</span></div>
+              <a class="mp-buy" href="https://gstarcad.onfastspring.com/houseplan-2-0-perpetual" target="_blank" rel="noopener">Buy</a>
+            </div>
+            <div class="mp-row" data-t="2" style="display:none">
+              <div class="mp-row-name">Houseplan 2.0</div>
+              <div class="mp-row-price"><b>$320</b> <span class="mp-unit">/ 1 Year</span></div>
+              <a class="mp-buy" href="https://gstarcad.onfastspring.com/houseplan-2-0--one-year-subscription" target="_blank" rel="noopener">Buy</a>
+            </div>
+            <div class="mp-row" data-t="3" style="display:none">
+              <div class="mp-row-name">Houseplan 2.0</div>
+              <div class="mp-row-price"><b>$320</b> <span class="mp-unit">/ Upgrade</span></div>
+              <a class="mp-buy" href="https://gstarcad.onfastspring.com/upgrade-to-houseplan-2-0-perpetual" target="_blank" rel="noopener">Buy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary mp-toggle mp-expand" type="button" aria-expanded="false">Show All Products (5) <span class="mp-caret">&#9662;</span></button>
+
+      <div class="mp-wrap">
+        <div class="mp-stack">
+          <div class="mp-card" data-card="mechanical">
+            <div class="mp-head">
+              <div>
+                <div class="mp-tag">CAD &middot; MECHANICAL</div>
+                <h3>&#127959;&#65039; GstarCAD Mechanical 2026</h3>
+              </div>
+            </div>
+            <p class="mp-brief">Specialized CAD for manufacturing and mechanical design &mdash; covers all mechanical drafting and design tasks for engineers.</p>
+            <div class="mp-tabs">
+              <button class="mp-tab active" type="button" data-t="1">Perpetual</button>
+              <button class="mp-tab" type="button" data-t="2">Subscription</button>
+              <button class="mp-tab" type="button" data-t="3">Upgrade</button>
+            </div>
+            <div class="mp-rows">
+              <div class="mp-row" data-t="1">
+                <div class="mp-row-name">Professional</div>
+                <div class="mp-row-price"><b>$1,279</b> <span class="mp-unit">/ Perpetual</span><i>$1,599</i></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/gstarcad-mechanical-2026-perpetual" target="_blank" rel="noopener">Buy</a>
+              </div>
+              <div class="mp-row" data-t="1">
+                <div class="mp-row-name">Plus</div>
+                <div class="mp-row-price"><b>$1,439</b> <span class="mp-unit">/ Perpetual</span><i>$1,799</i></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/gstarcad-mechanical-plus-2026-perpetual" target="_blank" rel="noopener">Buy</a>
+              </div>
+              <div class="mp-row" data-t="2" style="display:none">
+                <div class="mp-row-name">Professional</div>
+                <div class="mp-row-price"><b>$511</b> <span class="mp-unit">/ 1 Year</span><i>$639</i></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/gstarcad-mechanical-2026-one-year-subscription" target="_blank" rel="noopener">Buy</a>
+              </div>
+              <div class="mp-row" data-t="2" style="display:none">
+                <div class="mp-row-name">Plus</div>
+                <div class="mp-row-price"><b>$559</b> <span class="mp-unit">/ 1 Year</span><i>$699</i></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/gstarcad-mechanical-plus-2026-one-year-subscription" target="_blank" rel="noopener">Buy</a>
+              </div>
+              <div class="mp-row" data-t="3" style="display:none">
+                <div class="mp-row-name">Professional</div>
+                <div class="mp-row-price"><b>$447</b> <span class="mp-unit">/ Upgrade</span><i>$559</i></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/upgrade-to-gstarcad-mechanical-2026" target="_blank" rel="noopener">Buy</a>
+              </div>
+              <div class="mp-row" data-t="3" style="display:none">
+                <div class="mp-row-name">Plus</div>
+                <div class="mp-row-price"><b>$487</b> <span class="mp-unit">/ Upgrade</span><i>$609</i></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/upgrade-to-gstarcad-mechanical-plus-2026" target="_blank" rel="noopener">Buy</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mp-card" data-card="architecture">
+            <div class="mp-head">
+              <div>
+                <div class="mp-tag">CAD &middot; ARCHITECTURE</div>
+                <h3>&#127962;&#65039; GstarCAD Architecture</h3>
+              </div>
+            </div>
+            <p class="mp-brief">Associative and parametric building components &mdash; generates 2D drawings and 3D models synchronously for construction documentation.</p>
+            <div class="mp-tabs">
+              <button class="mp-tab active" type="button" data-t="1">Perpetual</button>
+              <button class="mp-tab" type="button" data-t="2">Subscription</button>
+              <button class="mp-tab" type="button" data-t="3">Upgrade</button>
+            </div>
+            <div class="mp-rows">
+              <div class="mp-row" data-t="1">
+                <div class="mp-row-name">GstarCAD Architecture</div>
+                <div class="mp-row-price"><b>$1,099</b> <span class="mp-unit">/ Perpetual</span></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/gstarcad-architecture-2021-standalone-perpetual" target="_blank" rel="noopener">Buy</a>
+              </div>
+              <div class="mp-row" data-t="2" style="display:none">
+                <div class="mp-row-name">GstarCAD Architecture</div>
+                <div class="mp-row-price"><b>$439</b> <span class="mp-unit">/ 1 Year</span></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/gstarcad-architecture-2021-standalone-one-year-subscription" target="_blank" rel="noopener">Buy</a>
+              </div>
+              <div class="mp-row" data-t="3" style="display:none">
+                <div class="mp-row-name">GstarCAD Architecture</div>
+                <div class="mp-row-price"><b>$439</b> <span class="mp-unit">/ Upgrade</span></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/upgrade-to-gstarcad-architecture-2021" target="_blank" rel="noopener">Buy</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mp-card" data-card="pointcloud">
+            <div class="mp-head">
+              <div>
+                <div class="mp-tag">CAD &middot; POINT CLOUD</div>
+                <h3>&#9729;&#65039; GstarCAD Point Cloud 2026</h3>
+              </div>
+            </div>
+            <p class="mp-brief">Import, manage and process point cloud data directly in GstarCAD &mdash; create precise 2D and 3D drawings efficiently.</p>
+            <div class="mp-tabs">
+              <button class="mp-tab active" type="button" data-t="1">Perpetual</button>
+              <button class="mp-tab" type="button" data-t="2">Subscription</button>
+              <button class="mp-tab" type="button" data-t="3">Upgrade</button>
+            </div>
+            <div class="mp-rows">
+              <div class="mp-row" data-t="1">
+                <div class="mp-row-name">GstarCAD Point Cloud 2026</div>
+                <div class="mp-row-price"><b>$2,070</b> <span class="mp-unit">/ Perpetual</span></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/gstarcad-point-cloud-2026-standalone-perpetual" target="_blank" rel="noopener">Buy</a>
+              </div>
+              <div class="mp-row" data-t="2" style="display:none">
+                <div class="mp-row-name">GstarCAD Point Cloud 2026</div>
+                <div class="mp-row-price"><b>$610</b> <span class="mp-unit">/ 1 Year</span></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/gstarcad-point-cloud-2026-standalone-one-year-subscription" target="_blank" rel="noopener">Buy</a>
+              </div>
+              <div class="mp-row" data-t="3" style="display:none">
+                <div class="mp-row-name">GstarCAD Point Cloud 2026</div>
+                <div class="mp-row-price"><b>$0</b> <span class="mp-unit">/ Upgrade</span></div>
+                <a class="mp-buy" href="https://www.gstarcad.net/Eshop/" target="_blank" rel="noopener">Buy</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mp-card" data-card="mac">
+            <div class="mp-head">
+              <div>
+                <div class="mp-tag">MAC EDITION</div>
+                <h3>&#127826; GstarCAD for Mac</h3>
+              </div>
+            </div>
+            <p class="mp-brief">Same intuitive interface as Windows &mdash; optimized for Apple M-series chips (M1&ndash;M4) with smooth, fast CAD performance.</p>
+            <div class="mp-tabs">
+              <button class="mp-tab active" type="button" data-t="1">Perpetual</button>
+              <button class="mp-tab" type="button" data-t="2">Subscription</button>
+            </div>
+            <div class="mp-rows">
+              <div class="mp-row" data-t="1">
+                <div class="mp-row-name">Standard</div>
+                <div class="mp-row-price"><b>$599</b> <span class="mp-unit">/ Perpetual</span><i>$749</i></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/gstarcad-for-mac-standard-standalone-perpetual" target="_blank" rel="noopener">Buy</a>
+              </div>
+              <div class="mp-row" data-t="1">
+                <div class="mp-row-name">Professional</div>
+                <div class="mp-row-price"><b>$759</b> <span class="mp-unit">/ Perpetual</span><i>$949</i></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/gstarcad-for-mac-professional-standalone-perpetual" target="_blank" rel="noopener">Buy</a>
+              </div>
+              <div class="mp-row" data-t="2" style="display:none">
+                <div class="mp-row-name">Standard</div>
+                <div class="mp-row-price"><b>$239</b> <span class="mp-unit">/ 1 Year</span><i>$299</i></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/gstarcad-for-mac-standard-standalone-one-year-subscription" target="_blank" rel="noopener">Buy</a>
+              </div>
+              <div class="mp-row" data-t="2" style="display:none">
+                <div class="mp-row-name">Professional</div>
+                <div class="mp-row-price"><b>$319</b> <span class="mp-unit">/ 1 Year</span><i>$399</i></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/gstarcad-for-mac-professional-one-year-subscription" target="_blank" rel="noopener">Buy</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mp-card" data-card="linux">
+            <div class="mp-head">
+              <div>
+                <div class="mp-tag">LINUX EDITION</div>
+                <h3>&#128039; GstarCAD 2026 for Linux</h3>
+              </div>
+            </div>
+            <p class="mp-brief">Built on the same core as the Windows version &mdash; full features, familiar interface, flexible licensing for Linux professionals.</p>
+            <div class="mp-tabs">
+              <button class="mp-tab active" type="button" data-t="1">Perpetual</button>
+              <button class="mp-tab" type="button" data-t="2">Subscription</button>
+              <button class="mp-tab" type="button" data-t="3">Upgrade</button>
+            </div>
+            <div class="mp-rows">
+              <div class="mp-row" data-t="1">
+                <div class="mp-row-name">Standard</div>
+                <div class="mp-row-price"><b>$599</b> <span class="mp-unit">/ Perpetual</span><i>$749</i></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/gstarcad-2026-for-linux-standard-standalone-perpetual" target="_blank" rel="noopener">Buy</a>
+              </div>
+              <div class="mp-row" data-t="1">
+                <div class="mp-row-name">Professional</div>
+                <div class="mp-row-price"><b>$759</b> <span class="mp-unit">/ Perpetual</span><i>$949</i></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/gstarcad-2026-for-linux-professional-standalone-perpetual" target="_blank" rel="noopener">Buy</a>
+              </div>
+              <div class="mp-row" data-t="2" style="display:none">
+                <div class="mp-row-name">Standard</div>
+                <div class="mp-row-price"><b>$239</b> <span class="mp-unit">/ 1 Year</span><i>$299</i></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/gstarcad-2026-for-linux-standard-standalone-one-year-subscription" target="_blank" rel="noopener">Buy</a>
+              </div>
+              <div class="mp-row" data-t="2" style="display:none">
+                <div class="mp-row-name">Professional</div>
+                <div class="mp-row-price"><b>$319</b> <span class="mp-unit">/ 1 Year</span><i>$399</i></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/gstarcad-2026-for-linux-professional-one-year-subscription" target="_blank" rel="noopener">Buy</a>
+              </div>
+              <div class="mp-row" data-t="3" style="display:none">
+                <div class="mp-row-name">Standard</div>
+                <div class="mp-row-price"><b>$239</b> <span class="mp-unit">/ Upgrade</span><i>$299</i></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/upgrade-to-gstarcad-2026-for-linux-standard" target="_blank" rel="noopener">Buy</a>
+              </div>
+              <div class="mp-row" data-t="3" style="display:none">
+                <div class="mp-row-name">Professional</div>
+                <div class="mp-row-price"><b>$271</b> <span class="mp-unit">/ Upgrade</span><i>$339</i></div>
+                <a class="mp-buy" href="https://gstarcad.onfastspring.com/upgrade-to-gstarcad-2026-for-linux-professional" target="_blank" rel="noopener">Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="mp-foot">All products sold from the official store &middot; Secure payment by FastSpring &middot; 30-day money-back guarantee</p>
+        <button class="btn btn-ghost mp-toggle mp-collapse" type="button" aria-expanded="false">Collapse <span class="mp-caret">&#9650;</span></button>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ 特性 -->
+<section style="background:var(--bg);">
+  <div class="container">
+    <h2 class="sec-title">Why Professionals Choose GstarCAD</h2>
+    <p class="sec-sub">Built for DWG workflows. Priced for real teams.</p>
+    <div class="feat-grid">
+      <div class="feat"><div class="ico">📐</div><h4>True DWG Compatibility</h4><p>Open, edit and save native DWG files — no conversion, no data loss.</p></div>
+      <div class="feat"><div class="ico">⚡</div><h4>Faster Performance</h4><p>Optimized for large drawings with high-performance 2D/3D engines.</p></div>
+      <div class="feat"><div class="ico">🔧</div><h4>LISP & Automation</h4><p>Full LISP/VBA support and 8,000+ ready-made commands.</p></div>
+      <div class="feat"><div class="ico">💲</div><h4>Up to 60% Cheaper</h4><p>Same workflow, same files — at a fraction of the cost of AutoCAD.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ vs AutoCAD 简表 -->
+<section>
+  <div class="container">
+    <h2 class="sec-title">GstarCAD vs AutoCAD</h2>
+    <p class="sec-sub">The honest comparison — same DWG files, smarter price.</p>
+    <table class="cmp-table">
+      <tr><th>Feature</th><th>GstarCAD 2027</th><th>AutoCAD 2026</th></tr>
+      <tr><td>Perpetual license</td><td class="yes">✓ Yes</td><td class="no">Subscription only</td></tr>
+      <tr><td>DWG compatibility</td><td class="yes">✓ Native</td><td class="yes">✓ Native</td></tr>
+      <tr><td>LISP / VBA support</td><td class="yes">✓ Yes</td><td class="yes">✓ Yes</td></tr>
+      <tr><td>Typical cost (1 yr)</td><td class="yes">$299 – $999</td><td class="no">$1,865+</td></tr>
+      <tr><td>30-day money back</td><td class="yes">✓ Yes</td><td class="no">No</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ⑤ 评价 -->
+<section style="background:var(--bg);">
+  <div class="container">
+    <h2 class="sec-title">Trusted by 1,000,000+ Drafters</h2>
+    <p class="sec-sub">Real reviews from verified license owners.</p>
+    <div class="testi-grid">
+      <div class="testi"><div class="stars">★★★★★</div><p>"Switched our whole office from AutoCAD. Same DWG workflow, paid once, saved $30K."</p><div class="who">– Michael R., Architectural Firm, USA</div></div>
+      <div class="testi"><div class="stars">★★★★★</div><p>"The LISP support is complete — every script our team used in AutoCAD runs here."</p><div class="who">– Priya S., Mechanical Engineer, India</div></div>
+      <div class="testi"><div class="stars">★★★★★</div><p>"Instant activation and great support. The money-back guarantee made it risk-free."</p><div class="who">– João M., Design Consultant, Brazil</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ⑥ FAQ -->
+<section>
+  <div class="container">
+    <h2 class="sec-title">Frequently Asked Questions</h2>
+    <p class="sec-sub">Answers before you buy.</p>
+    <div class="faq-group">
+      <h3>Payments, Delivery & Safety</h3>
+      <div class="faq">
+      <div class="faq-item"><div class="faq-q">What payment methods do you accept?</div><div class="faq-a">We accept PayPal, Visa, Mastercard, American Express and bank transfer. All payments are processed by FastSpring — no payment details ever touch our servers.</div></div>
+      <div class="faq-item"><div class="faq-q">Is it safe to pay on your website?</div><div class="faq-a">Yes. FastSpring is PCI-DSS Level 1 certified and our checkout is fully SSL encrypted. Your card data is tokenized and never stored.</div></div>
+      <div class="faq-item"><div class="faq-q">How is my privacy protected?</div><div class="faq-a">We only use your email to deliver the license and send essential order updates. We never sell or share your personal data with third parties.</div></div>
+      <div class="faq-item"><div class="faq-q">How fast will I receive my software?</div><div class="faq-a">Instantly. The license key and download link are sent to your email within minutes of payment confirmation — no physical delivery needed.</div></div>
+      <div class="faq-item"><div class="faq-q">Are prices tax-inclusive?</div><div class="faq-a">Prices shown may be exclusive of tax. Applicable VAT/sales tax is calculated and displayed at checkout before you confirm payment.</div></div>
+      <div class="faq-item"><div class="faq-q">What support do I get after buying?</div><div class="faq-a">Every license includes free installation assistance and technical support via email ticketing, plus free updates for the first year.</div></div>
+      <div class="faq-item"><div class="faq-q">We are always here to serve you</div><div class="faq-a">Questions before or after purchase? Our sales and support team replies within 24 hours — contact us anytime at sales@gstarcad.net.</div></div>
+      </div>
+    </div>
+    <div class="faq-group">
+      <h3>Product & License</h3>
+      <div class="faq">
+      <div class="faq-item open"><div class="faq-q">Is GstarCAD fully compatible with my DWG files?</div><div class="faq-a">Yes. GstarCAD opens, edits and saves native DWG files (R12–2026) with full fidelity — including layouts, xrefs and dynamic blocks.</div></div>
+      <div class="faq-item"><div class="faq-q">How is the license delivered?</div><div class="faq-a">Instant delivery by email within minutes of purchase. Activate offline with a license key — no dongle or cloud dependency required.</div></div>
+      <div class="faq-item"><div class="faq-q">What does the 30-day money-back guarantee cover?</div><div class="faq-a">If GstarCAD isn't right for you, request a full refund within 30 days of purchase — no questions asked.</div></div>
+      <div class="faq-item"><div class="faq-q">Can I upgrade later from Standard to Mechanical?</div><div class="faq-a">Yes. Pay only the price difference between editions. Upgrades are available anytime from your account.</div></div>
+      <div class="faq-item"><div class="faq-q">What are the system requirements?</div><div class="faq-a">Windows 10/11 64-bit, 4GB RAM (8GB recommended), 2GB disk space. Mac and Linux versions are also available.</div></div>
+      <div class="faq-item"><div class="faq-q">Is there a discount for education or volume purchases?</div><div class="faq-a">Yes — education licenses and volume pricing are available. Contact our sales team for a quote.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ 收尾 CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Ready to Buy GstarCAD 2027?</h2>
+    <p>Official license · Instant delivery · 30-day money-back guarantee</p>
+    <a href="#" class="btn btn-primary" style="font-size:17px;padding:16px 40px;">Buy Now – from $999</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 GstarCAD · Official Store · Secure payment by FastSpring · All rights reserved</div>
+</footer>
+<script>
+document.querySelectorAll('.price-tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.price-tab').forEach(x=>x.classList.remove('active')); t.classList.add('active');
+}));
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
+document.getElementById('moreProducts').querySelectorAll('.mp-toggle').forEach(b=>b.addEventListener('click',()=>{
+  const m=document.getElementById('moreProducts'); const open=m.classList.toggle('open');
+  m.querySelectorAll('.mp-toggle').forEach(x=>x.setAttribute('aria-expanded',open));
+}));
+</script>
+
+<script>
+document.querySelectorAll('#moreProducts .mp-card').forEach(function(card){
+  card.querySelectorAll('.mp-tab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      card.querySelectorAll('.mp-tab').forEach(function(t){ t.classList.remove('active'); });
+      tab.classList.add('active');
+      var t = tab.getAttribute('data-t');
+      card.querySelectorAll('.mp-row').forEach(function(r){
+        r.style.display = r.getAttribute('data-t') === t ? 'flex' : 'none';
+      });
+    });
+  });
+});
+</script>
+<!-- Dify AI 客服组件 -->
+<script>
+ window.difyChatbotConfig = {
+  token: 'O5jxOmBNiLEDSX8L',
+  baseUrl: 'https://chat-eshop.gstarcad.net',
+  inputs: {
+    current_page: window.location.pathname,
+    page_title: document.title,
+  },
+  systemVariables: {
+    // user_id: 'YOU CAN DEFINE USER ID HERE',
+    // conversation_id: 'YOU CAN DEFINE CONVERSATION ID HERE, IT MUST BE A VALID UUID',
+  },
+  userVariables: {
+    // avatar_url: 'YOU CAN DEFINE USER AVATAR URL HERE',
+    // name: 'YOU CAN DEFINE USER NAME HERE',
+  },
+ }
+</script>
+<script
+ src="https://chat-eshop.gstarcad.net/embed.min.js"
+ id="O5jxOmBNiLEDSX8L"
+ defer>
+</script>
+<style>
+  #dify-chatbot-bubble-button {
+    background-color: #1a73e8 !important;
+  }
+  #dify-chatbot-bubble-window {
+    width: 24rem !important;
+    height: 40rem !important;
+    position: fixed !important;
+    top: auto !important;
+    left: auto !important;
+    bottom: calc(1rem + 56px) !important;
+    right: 1rem !important;
+  }
+</style>
+</body>
+</html>
