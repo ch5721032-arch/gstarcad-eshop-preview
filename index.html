@@ -245,19 +245,19 @@
         <div class="hot-ico">🏗️</div>
         <h3>GstarBIM</h3>
         <p>Building Information Modeling solutions that connect design, analysis and construction.</p>
-        <a href="https://www.gstarcad.net/gstarbim/" target="_blank" rel="noopener">Buy</a>
+        <a href="#" class="hot-buy" data-buy="gstarbim">Buy</a>
       </div>
       <div class="hot-card">
         <div class="hot-ico">🎨</div>
         <h3>GstarRender</h3>
         <p>Bring your 3D models to life with fast, high-quality rendering powered by AI.</p>
-        <a href="https://enweb.gstarcad.net/ai/render/" target="_blank" rel="noopener">Buy</a>
+        <a href="#" class="hot-buy" data-buy="gstarrender">Buy</a>
       </div>
       <div class="hot-card">
         <div class="hot-ico">⚙️</div>
         <h3>GstarCAD Mechanical</h3>
         <p>Specialized mechanical design toolkit with powerful part libraries and drafting tools.</p>
-        <a href="https://www.gstarcad.net/mechanical/" target="_blank" rel="noopener">Buy</a>
+        <a href="#pricing" class="hot-buy" data-buy="mechanical">Buy</a>
       </div>
     </div>
   </div>
@@ -729,6 +729,73 @@ document.querySelectorAll('#moreProducts .mp-card').forEach(function(card){
     bottom: calc(1rem + 56px) !important;
     right: 1rem !important;
   }
+
+/* --- quote modal & pricing highlight (added 2026-09-07) --- */
+.q-overlay[hidden]{display:none}
+.q-overlay{position:fixed;inset:0;background:rgba(11,37,69,.55);display:flex;align-items:center;justify-content:center;z-index:200;padding:20px}
+.q-modal{background:#fff;border-radius:14px;max-width:460px;width:100%;padding:28px;box-shadow:0 18px 50px rgba(0,0,0,.25);position:relative}
+.q-modal h3{margin:0 0 6px;font-size:22px}
+.q-modal .q-sub{margin:0 0 18px;color:#5b6570;font-size:14px}
+.q-modal input,.q-modal textarea{width:100%;box-sizing:border-box;padding:11px 12px;margin:0 0 12px;border:1px solid #d5dbe3;border-radius:8px;font-size:14px;font-family:inherit}
+.q-modal textarea{min-height:84px;resize:vertical}
+.q-modal .btn{width:100%;border:0;cursor:pointer}
+.q-close{position:absolute;top:12px;right:14px;border:0;background:none;font-size:22px;color:#8a94a0;cursor:pointer;line-height:1}
+.q-ok{color:#188038;font-size:15px;text-align:center;padding:10px 0}
+.price-card.hl{outline:3px solid var(--accent);outline-offset:3px;transition:outline .2s}
+@media(max-width:640px){.q-modal{padding:20px}}
 </style>
+
+<!-- 询价弹窗（站内询价） -->
+<div class="q-overlay" id="qOverlay" hidden>
+  <div class="q-modal">
+    <button type="button" class="q-close" id="qClose" aria-label="Close">&times;</button>
+    <h3 id="qTitle">Request a Quote</h3>
+    <p class="q-sub">Tell us your requirement and our sales team will get back to you within one business day.</p>
+    <form id="qForm">
+      <input type="hidden" name="product" id="qProduct">
+      <input type="text" name="name" placeholder="Full name" required>
+      <input type="email" name="email" placeholder="Work email" required>
+      <input type="text" name="company" placeholder="Company (optional)">
+      <textarea name="message" placeholder="How many licenses / which edition do you need?"></textarea>
+      <button type="submit" class="btn btn-buy">Send Inquiry</button>
+    </form>
+    <p class="q-ok" id="qOk" hidden>&#10003; Thanks! Your inquiry has been received. Our sales team will contact you shortly.</p>
+  </div>
+</div>
+<script>
+document.querySelectorAll('.hot-buy').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var target = a.getAttribute('data-buy');
+    if (target === 'mechanical') {
+      var sec = document.getElementById('pricing');
+      if (sec) {
+        e.preventDefault();
+        sec.scrollIntoView({behavior:'smooth', block:'start'});
+        var cards = sec.querySelectorAll('.price-card');
+        var mc = null;
+        cards.forEach(function(cd){ if (cd.querySelector('h3') && cd.querySelector('h3').textContent.trim() === 'Mechanical') mc = cd; });
+        if (!mc && cards.length > 2) mc = cards[2];
+        if (mc) { mc.classList.add('hl'); setTimeout(function(){ mc.classList.remove('hl'); }, 2600); }
+      }
+    } else {
+      e.preventDefault();
+      var names = { gstarbim: 'GstarBIM', gstarrender: 'GstarRender' };
+      document.getElementById('qProduct').value = names[target] || target;
+      document.getElementById('qTitle').textContent = 'Request a Quote - ' + (names[target] || target);
+      document.getElementById('qOk').hidden = true;
+      document.getElementById('qForm').hidden = false;
+      document.getElementById('qOverlay').hidden = false;
+    }
+  });
+});
+document.getElementById('qClose').addEventListener('click', function(){ document.getElementById('qOverlay').hidden = true; });
+document.getElementById('qOverlay').addEventListener('click', function(e){ if (e.target === this) this.hidden = true; });
+document.getElementById('qForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  this.hidden = true;
+  document.getElementById('qOk').hidden = false;
+});
+</script>
 </body>
 </html>
+
