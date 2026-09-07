@@ -257,7 +257,7 @@
         <div class="hot-ico">⚙️</div>
         <h3>GstarCAD Mechanical</h3>
         <p>Specialized mechanical design toolkit with powerful part libraries and drafting tools.</p>
-        <a href="#pricing" class="hot-buy" data-buy="mechanical">Buy</a>
+        <a href="#" class="hot-buy" data-buy="mechanical">Buy</a>
       </div>
     </div>
   </div>
@@ -765,27 +765,14 @@ document.querySelectorAll('#moreProducts .mp-card').forEach(function(card){
 <script>
 document.querySelectorAll('.hot-buy').forEach(function(a){
   a.addEventListener('click', function(e){
-    var target = a.getAttribute('data-buy');
-    if (target === 'mechanical') {
-      var sec = document.getElementById('pricing');
-      if (sec) {
-        e.preventDefault();
-        sec.scrollIntoView({behavior:'smooth', block:'start'});
-        var cards = sec.querySelectorAll('.price-card');
-        var mc = null;
-        cards.forEach(function(cd){ if (cd.querySelector('h3') && cd.querySelector('h3').textContent.trim() === 'Mechanical') mc = cd; });
-        if (!mc && cards.length > 2) mc = cards[2];
-        if (mc) { mc.classList.add('hl'); setTimeout(function(){ mc.classList.remove('hl'); }, 2600); }
-      }
-    } else {
-      e.preventDefault();
-      var names = { gstarbim: 'GstarBIM', gstarrender: 'GstarRender' };
-      document.getElementById('qProduct').value = names[target] || target;
-      document.getElementById('qTitle').textContent = 'Request a Quote - ' + (names[target] || target);
-      document.getElementById('qOk').hidden = true;
-      document.getElementById('qForm').hidden = false;
-      document.getElementById('qOverlay').hidden = false;
-    }
+    e.preventDefault();
+    var names = { gstarbim: 'GstarBIM', gstarrender: 'GstarRender', mechanical: 'GstarCAD Mechanical' };
+    var label = names[a.getAttribute('data-buy')] || a.getAttribute('data-buy');
+    document.getElementById('qProduct').value = label;
+    document.getElementById('qTitle').textContent = 'Request a Quote - ' + label;
+    document.getElementById('qOk').hidden = true;
+    document.getElementById('qForm').hidden = false;
+    document.getElementById('qOverlay').hidden = false;
   });
 });
 document.getElementById('qClose').addEventListener('click', function(){ document.getElementById('qOverlay').hidden = true; });
