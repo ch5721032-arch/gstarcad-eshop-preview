@@ -746,15 +746,15 @@ document.querySelectorAll('#moreProducts .mp-card').forEach(function(card){
 </style>
 
 <!-- ============================================================
-     浩辰软件 · AI 客服气泡「显眼化」增强包  v1.1  |  2026-09-16
+     浩辰软件 · AI 客服气泡「显眼化」增强包  v1.2  |  2026-09-16
      ------------------------------------------------------------
      【用法】紧跟在 Dify 客服嵌入代码之后（同一位置）粘贴即可，无需改动原代码。
      【效果】
        1) 气泡从 48px 放大到 64px，换成品牌蓝渐变 + 更强的投影与描边光环
        2) 呼吸光环动效 + 右上角红点提醒，logo 图标同步放大
        3) 气泡左侧出现「AI Assistant」文字标签，点击即可开聊
-       4) 停留 6 秒后弹出一句主动问候，可关闭、关闭后本会话不再出现
-       5) v1.1 实测修正：气泡放大后，聊天窗底部同步上移，避免窗口底边压住大气泡
+       4) 主动问候语：默认关闭（如需开启，在配置区 CFG.greeting 填入文案）
+       5) 实测修正：气泡放大后，聊天窗底部同步上移，避免窗口底边压住大气泡
      【注意】英文站用英文文案；中文站部署时把 CFG 里的 label / greeting 换成中文即可。
      ============================================================ -->
 <script>
@@ -766,7 +766,7 @@ document.querySelectorAll('#moreProducts .mp-card').forEach(function(card){
     showBadge:     true,     // 右上角红点
     label:         'AI Assistant',  // 气泡旁文字标签，设为 '' 则不显示
     labelDelay:    1200,     // 标签出现延时（毫秒）
-    greeting:      'Hi! Need a hand? Ask me anything about GstarCAD.',  // 主动问候语
+    greeting:      '',  // 主动问候语（当前关闭；填入文案即可开启）
     greetingDelay: 6000,     // 问候出现延时（毫秒）
     greetingOnce:  true      // 关闭后本浏览器不再弹出
   };
