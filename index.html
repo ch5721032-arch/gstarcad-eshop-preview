@@ -745,6 +745,163 @@ document.querySelectorAll('#moreProducts .mp-card').forEach(function(card){
 @media(max-width:640px){.q-modal{padding:20px}}
 </style>
 
+<!-- ============================================================
+     浩辰软件 · AI 客服气泡「显眼化」增强包  v1.1  |  2026-09-16
+     ------------------------------------------------------------
+     【用法】紧跟在 Dify 客服嵌入代码之后（同一位置）粘贴即可，无需改动原代码。
+     【效果】
+       1) 气泡从 48px 放大到 64px，换成品牌蓝渐变 + 更强的投影与描边光环
+       2) 呼吸光环动效 + 右上角红点提醒，logo 图标同步放大
+       3) 气泡左侧出现「AI Assistant」文字标签，点击即可开聊
+       4) 停留 6 秒后弹出一句主动问候，可关闭、关闭后本会话不再出现
+       5) v1.1 实测修正：气泡放大后，聊天窗底部同步上移，避免窗口底边压住大气泡
+     【注意】英文站用英文文案；中文站部署时把 CFG 里的 label / greeting 换成中文即可。
+     ============================================================ -->
+<script>
+(function () {
+  /* ================= 配置区（想改文案/尺寸只改这里） ================= */
+  var CFG = {
+    bubbleSize:    64,       // 气泡直径（原 48）
+    iconSize:      30,       // 内部图标尺寸（原 24）
+    showBadge:     true,     // 右上角红点
+    label:         'AI Assistant',  // 气泡旁文字标签，设为 '' 则不显示
+    labelDelay:    1200,     // 标签出现延时（毫秒）
+    greeting:      'Hi! Need a hand? Ask me anything about GstarCAD.',  // 主动问候语
+    greetingDelay: 6000,     // 问候出现延时（毫秒）
+    greetingOnce:  true      // 关闭后本浏览器不再弹出
+  };
+  /* ================================================================= */
+
+  var BTN = 'dify-chatbot-bubble-button';
+  var GAP = 16;                                   // 与原气泡右下角间距保持一致
+  var labelBottom = GAP + (CFG.bubbleSize - 36) / 2;
+
+  var css = ''
+    /* 1) 气泡本体：放大 + 品牌渐变 + 投影 + 描边光环 */
+    + '#' + BTN + '{width:' + CFG.bubbleSize + 'px !important;height:' + CFG.bubbleSize + 'px !important;'
+    + 'border-radius:50% !important;'
+    + 'background:linear-gradient(135deg,#37C6FF 0%,#2E7CF6 48%,#1B4ED8 100%) !important;'
+    + 'box-shadow:0 12px 30px rgba(27,78,216,.45),0 0 0 6px rgba(55,198,255,.14) !important;'
+    + 'transition:transform .22s ease,box-shadow .22s ease !important;}'
+    + '#' + BTN + ':hover{transform:scale(1.06) translateY(-1px) !important;'
+    + 'box-shadow:0 16px 38px rgba(27,78,216,.55),0 0 0 9px rgba(55,198,255,.18) !important;}'
+    + '#' + BTN + ' svg{width:' + CFG.iconSize + 'px !important;height:' + CFG.iconSize + 'px !important;}'
+
+    /* 1.5) 气泡放大后，聊天窗底部同步上移，避免窗口底边压住大气泡（原按 48px 气泡计算） */
+    /*     注：选择器故意写成 html body 开头（提高优先级），防止被页面里靠后的旧样式盖住 */
+    + 'html body #dify-chatbot-bubble-window{bottom:calc(1rem + 72px) !important;}'
+
+    /* 2) 呼吸光环 */
+    + '#' + BTN + '::before{content:"" !important;position:absolute;inset:-6px;border-radius:50%;'
+    + 'border:2px solid rgba(55,198,255,.6);animation:gstarAiPulse 2.4s ease-out infinite;pointer-events:none;}'
+    + '@keyframes gstarAiPulse{0%{transform:scale(.85);opacity:.85}70%{transform:scale(1.4);opacity:0}100%{transform:scale(1.4);opacity:0}}'
+
+    /* 3) 右上角红点（点过客服后自动消失） */
+    + (CFG.showBadge
+      ? '#' + BTN + '::after{content:"" !important;position:absolute;top:1px;right:1px;width:15px;height:15px;'
+        + 'border-radius:50%;background:#FF4D4F;border:2.5px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.28);'
+        + 'animation:gstarAiBlink 2.4s ease-in-out infinite;}'
+        + '@keyframes gstarAiBlink{0%,100%{opacity:1}50%{opacity:.5}}'
+        + 'body.gstar-ai-read #' + BTN + '::after{display:none !important;}'
+      : '')
+
+    /* 4) 文字标签 */
+    + '.gstar-ai-label{position:fixed;right:' + (GAP + CFG.bubbleSize + 12) + 'px;bottom:' + labelBottom + 'px;'
+    + 'display:flex;align-items:center;gap:8px;height:36px;padding:0 14px 0 12px;border-radius:999px;'
+    + 'background:#fff;color:#12328F;font:600 14px/1 "Microsoft YaHei","PingFang SC",Arial,sans-serif;'
+    + 'box-shadow:0 8px 22px rgba(15,40,90,.18),0 0 0 1px rgba(226,235,250,.9);'
+    + 'cursor:pointer;white-space:nowrap;z-index:2147483646;opacity:0;transform:translateX(8px);'
+    + 'transition:opacity .35s ease,transform .35s ease;}'
+    + '.gstar-ai-label.on{opacity:1;transform:none;}'
+    + '.gstar-ai-label:hover{background:#F3F8FF;}'
+    + '.gstar-ai-label i{width:9px;height:9px;border-radius:50%;background:#22C55E;flex:0 0 9px;'
+    + 'box-shadow:0 0 0 3px rgba(34,197,94,.18);}'
+    + '.gstar-ai-label b{font-weight:700;}'
+    + '.gstar-ai-label u{text-decoration:none;color:#8A9BB8;font-weight:400;margin-left:2px;}'
+
+    /* 5) 主动问候气泡 */
+    + '.gstar-ai-hello{position:fixed;right:' + GAP + 'px;bottom:' + (GAP + CFG.bubbleSize + 14) + 'px;'
+    + 'width:270px;padding:13px 34px 13px 15px;border-radius:14px;background:#fff;color:#22314D;'
+    + 'font:400 14px/1.65 "Microsoft YaHei","PingFang SC",Arial,sans-serif;'
+    + 'box-shadow:0 14px 36px rgba(15,40,90,.20),0 0 0 1px rgba(226,235,250,.9);'
+    + 'z-index:2147483646;opacity:0;transform:translateY(8px);transition:opacity .35s ease,transform .35s ease;}'
+    + '.gstar-ai-hello.on{opacity:1;transform:none;}'
+    + '.gstar-ai-hello b{color:#12328F;}'
+    + '.gstar-ai-hello .gstar-ai-hello-close{position:absolute;top:6px;right:8px;width:22px;height:22px;'
+    + 'border:0;background:none;color:#9AA9C0;font:400 17px/1 Arial;cursor:pointer;border-radius:50%;}'
+    + '.gstar-ai-hello .gstar-ai-hello-close:hover{background:#F1F5FC;color:#5A6B85;}'
+    + '.gstar-ai-hello::after{content:"";position:absolute;right:' + ((CFG.bubbleSize - 16) / 2) + 'px;bottom:-7px;'
+    + 'width:14px;height:14px;background:#fff;transform:rotate(45deg);'
+    + 'box-shadow:3px 3px 6px rgba(15,40,90,.06);}'
+
+    /* 6) 手机端：只保留大气泡，隐藏文字标签与问候气泡 */
+    + '@media (max-width:640px){.gstar-ai-label{display:none !important}.gstar-ai-hello{display:none !important}}';
+
+  var styleTag = document.createElement('style');
+  styleTag.setAttribute('data-gstar-ai-enhance', 'style');
+  styleTag.textContent = css;
+  document.head.appendChild(styleTag);
+
+  function openChat() {
+    var btn = document.getElementById(BTN);
+    if (btn) btn.click();
+    document.body.classList.add('gstar-ai-read');
+    var hello = document.querySelector('.gstar-ai-hello');
+    if (hello) { hello.classList.remove('on'); setTimeout(function () { hello.remove(); }, 400); }
+    if (CFG.greetingOnce) { try { sessionStorage.setItem('gstarAiHelloClosed', '1'); } catch (e) {} }
+  }
+
+  function build() {
+    // 文字标签
+    if (CFG.label) {
+      var label = document.createElement('div');
+      label.className = 'gstar-ai-label';
+      label.setAttribute('role', 'button');
+      label.setAttribute('tabindex', '0');
+      label.innerHTML = '<i></i><b>' + CFG.label + '</b><u>›</u>';
+      label.addEventListener('click', openChat);
+      label.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openChat(); } });
+      document.body.appendChild(label);
+      setTimeout(function () { label.classList.add('on'); }, CFG.labelDelay);
+    }
+
+    // 主动问候气泡
+    if (CFG.greeting) {
+      var closed = false;
+      try { closed = CFG.greetingOnce && sessionStorage.getItem('gstarAiHelloClosed') === '1'; } catch (e) {}
+      if (!closed) {
+        var hello = document.createElement('div');
+        hello.className = 'gstar-ai-hello';
+        hello.innerHTML = '<button type="button" class="gstar-ai-hello-close" aria-label="Close">&times;</button>'
+          + '<span class="gstar-ai-hello-text">' + CFG.greeting + '</span>';
+        hello.querySelector('.gstar-ai-hello-text').addEventListener('click', openChat);
+        hello.querySelector('.gstar-ai-hello-close').addEventListener('click', function (e) {
+          e.stopPropagation();
+          hello.classList.remove('on');
+          if (CFG.greetingOnce) { try { sessionStorage.setItem('gstarAiHelloClosed', '1'); } catch (e) {} }
+          setTimeout(function () { hello.remove(); }, 400);
+        });
+        document.body.appendChild(hello);
+        setTimeout(function () { hello.classList.add('on'); }, CFG.greetingDelay);
+      }
+    }
+
+    // 点过客服后，红点消失
+    var btn = document.getElementById(BTN);
+    if (btn) btn.addEventListener('click', function () { document.body.classList.add('gstar-ai-read'); });
+  }
+
+  // 等 Dify 的气泡按钮出现后再挂载（最多等 24 秒）
+  var tries = 0;
+  (function wait() {
+    if (document.getElementById(BTN)) { build(); return; }
+    if (++tries > 60) return;
+    setTimeout(wait, 400);
+  })();
+})();
+</script>
+<!-- ===================== 增强包结束 ===================== -->
+
 <!-- 询价弹窗（站内询价） -->
 <div class="q-overlay" id="qOverlay" hidden>
   <div class="q-modal">
